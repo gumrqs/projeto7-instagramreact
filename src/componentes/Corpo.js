@@ -1,5 +1,6 @@
 import { storiesCorpo } from '../dados.js';
 import { postsCorpo } from '../dados.js';
+import Post from './Post';
 import background from '../imagens/stories_background.jpg';
 import React from 'react';
 
@@ -32,56 +33,10 @@ function Stories () {
 }
 
 function Posts(){
-    const [nomeIcone, setNomeIcone] = React.useState("heart-outline");
-
+    let postProps = postsCorpo.map(post => <Post postImg={post.img} postUsuario={post.usuario} postPubli={post.publi} postImgCurtidas={post.imgcurtidas} postCurtido={post.curtido}/>);
     return (
-        <div>
-            {postsCorpo.map((post)=>
-            {
-            return(  
-            <div class="feed">
-                <div class="usuario">
-                    <div class="caixa-sugestao1">
-                        <div class="img-sugestoes1">
-                            <img src={post.img} alt=""/>
-                            <div class="textos1">
-                                <h1>{post.usuario}</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="publicacao">
-                    <img class="img-feed" src={post.publi} alt=""/>
-                </div>
-        
-                <div class="reacao">
-                    <div class="reacao1">
-                    <ion-icon name={nomeIcone} onClick={()=> { 
-                            if(nomeIcone === "heart-outline")
-                            {
-                            setNomeIcone("heart")  
-                        } 
-                            else 
-                            { setNomeIcone("heart-outline");}}}></ion-icon>
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                        <ion-icon name="paper-plane-outline"></ion-icon>
-                    </div>
-                    <div class="salvar">
-                        <ion-icon name="bookmark-outline"></ion-icon>
-                    </div>
-                </div>
-                
-                <div class="curtidas">
-                    <div class="conteudo-curtidas">
-                        <img class="img-curtidas" src={post.imgcurtidas}alt=""/> 
-                        <div class="numero-curtidas">Curtido por <strong>{post.curtido}</strong> e <strong>outras 101.523 pessoas</strong> 
-                        </div>  
-                    </div>
-                
-                </div>
-            </div>
-                )}
-            )}
+        <div class='feed'>
+            {postProps}
         </div>
     ); 
 }
