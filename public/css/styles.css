@@ -158,6 +158,9 @@ color:  #262626;
     align-items: center;
     margin-bottom: 14px;
 }
+.curtido:nth-child(1) ion-icon{
+    color:red; 
+}
 .textos1{
     height: 32px;
     width: 126px;
@@ -323,6 +326,7 @@ margin-bottom: 15px;
     justify-content: space-between;
 }
 .reacao1{
+    display: flex;
     width: 80px;
     margin-left: 8px;
 }

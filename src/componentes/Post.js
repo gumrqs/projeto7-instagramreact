@@ -1,12 +1,15 @@
 import React from 'react';
 export default function Post(props){
     const [nomeIcone, setNomeIcone] = React.useState("heart-outline");
+    const [nomeClasse, setNomeClasse] = React.useState("nada");
     function likeIcone(){
         if(nomeIcone === "heart-outline"){
             setNomeIcone("heart");
+            setNomeClasse("curtido");
         } 
-        else{ 
+        if(nomeIcone === "heart"){ 
             setNomeIcone("heart-outline");
+            setNomeClasse("nada");
         }
     }
     return( 
@@ -27,7 +30,7 @@ export default function Post(props){
         
                 <div class="reacao">
                     <div class="reacao1">
-                    <ion-icon name={nomeIcone} onClick={()=> likeIcone()}></ion-icon>
+                        <div class={nomeClasse}><ion-icon name={nomeIcone} onClick={()=> likeIcone()}></ion-icon></div>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
