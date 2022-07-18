@@ -93,7 +93,7 @@ const postsCorpo = [
     },
     {
         img:burrotriste,
-        usuario: 'Eu',
+        usuario: 'burro',
         publi:burrotriste,
         curtido: 'dragoa',
         imgcurtidas: draga

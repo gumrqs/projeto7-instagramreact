@@ -150,6 +150,7 @@ color:  #262626;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 14px;
 }
 .textos1{
     height: 32px;
@@ -273,7 +274,6 @@ color: #262626;
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    margin-bottom: 18px;
 }
 .post{
     width: 614px;
@@ -319,31 +319,31 @@ margin-bottom: 15px;
 }
 .reacao1{
     width: 80px;
-    margin-left: 17.5px;
+    margin-left: 8px;
 }
 .reacao1 ion-icon{
     margin-right: 5px;
     color: #000;
 
 }
+.aqui{
+    color: red;
+}
 .salvar{
     margin-right: 17.5px;
 }
 .img-curtidas{
-    margin-left: 17px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
 }
-.curtidas{
-    width: 100%;
 
-}
 .conteudo-curtidas{
     margin-bottom: 13px;
     margin-top: 13.5px;
     display: flex;
     align-items: center;
+    margin-left: 8px;
 }
 .numero-curtidas{
     margin-left: 5px;

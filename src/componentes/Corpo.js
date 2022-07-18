@@ -1,12 +1,12 @@
 import { storiesCorpo } from '../dados.js';
 import { postsCorpo } from '../dados.js';
 import background from '../imagens/stories_background.jpg';
+import React from 'react';
 
 export default function Corpo(){
     return (
         <div class="feed">
                 <Stories/>
-                <ion-icon name="chevron-forward-circle"></ion-icon>
                 <Posts/>
         </div> 
     );         
@@ -25,11 +25,15 @@ function Stories () {
                 </div>
         )}
         )} 
+        <ion-icon name="chevron-forward-circle"></ion-icon>
+
         </div> 
     );         
 }
 
 function Posts(){
+    const [nomeIcone, setNomeIcone] = React.useState("heart-outline");
+
     return (
         <div>
             {postsCorpo.map((post)=>
@@ -52,7 +56,13 @@ function Posts(){
         
                 <div class="reacao">
                     <div class="reacao1">
-                        <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon name={nomeIcone} onClick={()=> { 
+                            if(nomeIcone === "heart-outline")
+                            {
+                            setNomeIcone("heart")  
+                        } 
+                            else 
+                            { setNomeIcone("heart-outline");}}}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
